@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tutorial - Programación Móvil</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">📱</div>
+  <div class="titulo">
+    <h1>Tutorial de Programación Móvil</h1>
+    <p>HTML + CSS + JavaScript</p>
+  </div>
+  <button id="btnMenu">☰</button>
+</header>
+
+<div class="layout">
+
+  <aside class="izquierda">
+    <h3>Temas</h3>
+    <a href="#versiones">1. Control de Versiones</a>
+    <a href="#persistencia">2. Persistencia</a>
+    <a href="#sensores">3. Sensores</a>
+    <a href="#multimedia">4. Multimedia</a>
+    <a href="#servicios">5. Servicios</a>
+    <a href="#librerias">6. Librerías</a>
+    <a href="#depuracion">7. Depuración</a>
+    <a href="#referencias">Referencias APA</a>
+  </aside>
+
+  <main>
+    <input type="text" id="buscador" placeholder="Buscar... Ej: Git, SQLite, sensor">
+
+    <!-- 1 -->
+    <section id="versiones" class="card">
+      <h2>1. Control de Versiones</h2>
+      <button class="ver">Ver / Ocultar</button>
+      <div class="contenido">
+        <h3>Definición</h3>
+        <p>Sistema que guarda los cambios del código a lo largo del tiempo. Permite regresar a una versión anterior, ver quién cambió qué y trabajar en equipo sin borrar el trabajo de otros.</p>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=800&q=80" alt="Control de versiones Git">
+          <figcaption>Figura 1. Trabajo en equipo con control de versiones como Git.</figcaption>
+        </figure>
+        <h3>¿Cuáles son?</h3>
+        <p><b>Local:</b> Solo en tu compu. Ej: RCS.</p>
+        <p><b>Centralizado:</b> Un solo servidor. Ej: SVN, CVS.</p>
+        <p><b>Distribuido:</b> Cada quien tiene copia completa. Ej: Git, Mercurial.</p>
+        <h3>Características, ventajas y desventajas</h3>
+        <p><b>Git:</b> Distribuido, rápido, con ramas. Ventaja: muy usado. Desventaja: al inicio es difícil.</p>
+        <p><b>GitHub / GitLab:</b> Guardan tu Git en la nube. Ventaja: respaldo. Desventaja: necesitas internet.</p>
+        <p><b>SVN:</b> Centralizado, fácil. Ventaja: simple. Desventaja: si falla el servidor, nadie trabaja.</p>
+        <h3>¿Cómo funciona?</h3>
+        <p>1. Cambias algo. 2. <code>git add</code> 3. <code>git commit -m "mensaje"</code> 4. <code>git push</code>.</p>
+        <h3>Rastreo y gestión de cambios</h3>
+        <p>Con el historial ves qué, cuándo y quién cambió. Si algo se rompe, regresas al commit anterior.</p>
+        <h3>Video explicativo</h3>
+        <div class="video"><iframe src="https://www.youtube.com/embed/3GymExBkKjE" title="Qué es Git" allowfullscreen></iframe></div>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section id="persistencia" class="card">
+      <h2>2. Persistencia y Acceso a Datos</h2>
+      <button class="ver">Ver / Ocultar</button>
+      <div class="contenido">
+        <h3>Definición</h3>
+        <p>Que los datos no se borren cuando se cierra la app. Ej: que tus notas sigan ahí al volver a abrirla.</p>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&q=80" alt="Base de datos">
+          <figcaption>Figura 2. Bases de datos locales y remotas para guardar información.</figcaption>
+        </figure>
+        <h3>Formas de persistencia</h3>
+        <p><b>Archivos:</b> Fotos, texto, PDF en la memoria.</p>
+        <p><b>Base de datos local:</b> Datos ordenados sin internet. Ej: SQLite, Room.</p>
+        <p><b>Base de datos remota por servicios web:</b> Datos en un servidor. Ej: Firebase, MySQL.</p>
+        <h3>Tipos de datos</h3>
+        <p>En archivos: imágenes, audios. En local: texto, números, fechas. En remota: usuarios, pedidos, mensajes.</p>
+        <h3>Control de acceso</h3>
+        <p><b>Biblioteca de clases:</b> Códigos ya hechos. <b>Clases de SQLite:</b> SQLiteOpenHelper y SQLiteDatabase. <b>ORM:</b> Usas objetos en vez de SQL. Ej: Room.</p>
+        <h3>Autenticación y servicios web</h3>
+        <p>1. Pones correo y contraseña. 2. El servidor te da un token. 3. La app pide datos con GET y POST.</p>
+        <h3>Video explicativo</h3>
+        <div class="video"><iframe src="https://www.youtube.com/embed/8Xg7E9shL0g" title="Bases de datos" allowfullscreen></iframe></div>
+      </div>
+    </section>
+
+    <!-- 3 -->
+    <section id="sensores" class="card">
+      <h2>3. Gestión de Sensores</h2>
+      <button class="ver">Ver / Ocultar</button>
+      <div class="contenido">
+        <h3>Definición</h3>
+        <p>Componentes que detectan lo real: movimiento, luz, ubicación, y lo convierten en datos para la app.</p>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80" alt="Sensores de celular">
+          <figcaption>Figura 3. El celular usa sensores como GPS, acelerómetro y brújula.</figcaption>
+        </figure>
+        <h3>Tipos</h3>
+        <p><b>Movimiento:</b> Acelerómetro, giroscopio. <b>Posición:</b> GPS, brújula. <b>Ambiente:</b> Luz, proximidad. <b>Biométricos:</b> Huella, cara.</p>
+        <h3>Proceso</h3>
+        <p><b>1. Habilitación:</b> Se pide permiso. <b>2. Obtención:</b> Se lee el dato. <b>3. Procesamiento:</b> Se interpreta. Ej: contar pasos.</p>
+        <p><button onclick="probarSensor()">Probar sensor</button> <span id="resultadoSensor"></span></p>
+        <h3>Video explicativo</h3>
+        <video controls src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
+        <p><small>Video de ejemplo multimedia para probar reproducción en móvil.</small></p>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section id="multimedia" class="card">
+      <h2>4. Uso de Recursos Multimedia</h2>
+      <button class="ver">Ver / Ocultar</button>
+      <div class="contenido">
+        <h3>Definición</h3>
+        <p>Lo que hace que la app se vea y se escuche bien: imágenes, sonidos, videos y animaciones.</p>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80" alt="Recursos multimedia">
+          <figcaption>Figura 4. Imágenes, audio, video y animaciones en una app móvil.</figcaption>
+        </figure>
+        <h3>Tipos</h3>
+        <p><b>Imágenes:</b> JPG, PNG. <b>Audio:</b> Música, efectos. <b>Video:</b> Tutoriales. <b>Animaciones:</b> Botones que se mueven, GIF.</p>
+        <h3>Dónde se guardan</h3>
+        <p>En Android: <code>res/drawable</code> para imágenes, <code>res/raw</code> para audio/video, <code>assets</code> para archivos. En Flutter: <code>assets/</code>.</p>
+        <h3>Componentes</h3>
+        <p>ImageView, MediaPlayer / ExoPlayer, Glide, Lottie.</p>
+        <h3>Ejemplo de video y audio</h3>
+        <video controls src="https://www.w3schools.com/html/movie.mp4"></video>
+        <p><b>Audio:</b></p>
+        <audio controls src="https://www.w3schools.com/html/horse.mp3"></audio>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section id="servicios" class="card">
+      <h2>5. Servicios y Notificaciones</h2>
+      <button class="ver">Ver / Ocultar</button>
+      <div class="contenido">
+        <h3>Definición</h3>
+        <p>Servicio: proceso que sigue aunque no tengas la app abierta. Notificación: aviso que te llega.</p>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80" alt="Notificaciones">
+          <figcaption>Figura 5. Notificaciones push enviadas desde la nube.</figcaption>
+        </figure>
+        <h3>Tareas en segundo plano</h3>
+        <p>Trabajos que siguen con la app cerrada. Ej: descargar archivo, reproducir música.</p>
+        <h3>Implementación</h3>
+        <p><b>Proveedor de contenido:</b> Comparte datos entre apps, ej: contactos. <b>Segundo plano:</b> WorkManager. <b>Notificación:</b> NotificationManager. <b>Nube:</b> Firebase Cloud Messaging.</p>
+        <h3>Nube</h3>
+        <p>Firebase, AWS Amplify, Google Cloud, Azure.</p>
+        <p><button onclick="mostrarNotificacion()">Simular notificación</button></p>
+        <h3>Video explicativo</h3>
+        <div class="video"><iframe src="https://www.youtube.com/embed/1k7Y0aJ5N4Y" title="Notificaciones Firebase" allowfullscreen></iframe></div>
+      </div>
+    </section>
+
+    <!-- 6 -->
+    <section id="librerias" class="card">
+      <h2>6. Librerías y Toolkits</h2>
+      <button class="ver">Ver / Ocultar</button>
+      <div class="contenido">
+        <h3>¿Qué es librería y toolkit?</h3>
+        <p><b>Librería:</b> Funciones ya hechas que tú usas cuando quieres. Tú mandas.</p>
+        <p><b>Toolkit:</b> Paquete completo con herramientas y reglas. El toolkit te dice cómo trabajar.</p>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80" alt="Código y librerías">
+          <figcaption>Figura 6. Librerías y toolkits como Flutter, React Native y Android SDK.</figcaption>
+        </figure>
+        <h3>Librerías especializadas</h3>
+        <p>Retrofit para internet, Glide para imágenes, Room para base de datos, Google Maps para mapas, Lottie para animaciones.</p>
+        <h3>Toolkits</h3>
+        <p><b>Android SDK:</b> Solo Android. <b>iOS SDK:</b> Solo iPhone. <b>Flutter:</b> Una app para los dos, con Dart. <b>React Native:</b> Una app para los dos, con JavaScript.</p>
+        <h3>Video explicativo</h3>
+        <div class="video"><iframe src="https://www.youtube.com/embed/VPvVD8t02U8" title="Flutter vs React Native" allowfullscreen></iframe></div>
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section id="depuracion" class="card">
+      <h2>7. Depuración y Seguridad</h2>
+      <button class="ver">Ver / Ocultar</button>
+      <div class="contenido">
+        <h3>¿Qué es?</h3>
+        <p><b>Depuración:</b> Buscar y corregir errores. <b>Seguridad:</b> Proteger datos del usuario.</p>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80" alt="Depuración de código">
+          <figcaption>Figura 7. Depuración con Logcat, breakpoints y emulador.</figcaption>
+        </figure>
+        <h3>Herramientas</h3>
+        <p>Logcat, Breakpoints, Emulador, Profiler, Crashlytics.</p>
+        <h3>Seguridad</h3>
+        <p>No guardar contraseñas en texto, usar HTTPS, pedir solo permisos necesarios, usar token y cifrar datos.</p>
+        <h3>Video explicativo</h3>
+        <div class="video"><iframe src="https://www.youtube.com/embed/7UosC0fhA2k" title="Depuración Android" allowfullscreen></iframe></div>
+      </div>
+    </section>
+
+    <!-- REFERENCIAS APA -->
+    <section id="referencias" class="card">
+      <h2>Referencias - Formato APA 7.ª ed.</h2>
+      <p class="apa">Chacon, S. y Straub, B. (2014). <i>Pro Git</i> (2.ª ed.). Apress. https://git-scm.com/book/en/v2</p>
+      <p class="apa">Google Developers. (2024). <i>Guía de desarrollo en Android: Persistencia y almacenamiento de datos</i>. https://developer.android.com/training/data-storage</p>
+      <p class="apa">Google Developers. (2024). <i>Sensores y ubicación en Android</i>. https://developer.android.com/develop/sensors-and-location</p>
+      <p class="apa">Google Developers. (2024). <i>Servicios en segundo plano y notificaciones</i>. https://developer.android.com/develop/background-work</p>
+      <p class="apa">Firebase. (2024). <i>Documentación de Firebase Cloud Messaging</i>. Google. https://firebase.google.com/docs/cloud-messaging</p>
+      <p class="apa">Flutter. (2024). <i>Documentación oficial de Flutter: Recursos y multimedia</i>. Google. https://docs.flutter.dev/development/ui/assets-and-images</p>
+      <p class="apa">SQLite Consortium. (2024). <i>Documentación de SQLite</i>. https://www.sqlite.org/docs.html</p>
+      <p class="apa">Meta. (2024). <i>Documentación de React Native: Librerías y componentes</i>. https://reactnative.dev/docs/getting-started</p>
+    </section>
+
+  </main>
+
+  <aside class="derecha">
+    <h3>¿Qué es esto?</h3>
+    <p>Tutorial responsivo con HTML, CSS y JavaScript separados, como pide la práctica.</p>
+    <h3>¿Cómo se usa?</h3>
+    <p>1. Haz clic en un tema del menú izquierdo.<br>2. Usa el buscador.<br>3. Pulsa Ver / Ocultar.</p>
+    <h3>Dato rápido</h3>
+    <p><b>HTML</b> = estructura<br><b>CSS</b> = diseño<br><b>JS</b> = funcionamiento</p>
+    <div class="aviso">💡 En celular las 3 columnas se ponen una abajo de otra.</div>
+  </aside>
+
+</div>
+
+<footer>
+  <p>Práctica 12/11/2026 - Tutorial Responsivo - HTML + CSS + JavaScript</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
